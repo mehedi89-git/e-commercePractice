@@ -1,8 +1,9 @@
 import { ProductCart } from "./ProductCart";
+
 import "./ProductGrid.css";
 
 
-export const ProductGrid = ({ addProductToCart }) => {
+export const ProductGrid = () => {
 
   const products = [
     {
@@ -68,8 +69,7 @@ export const ProductGrid = ({ addProductToCart }) => {
       {products.map((product) => (
         <ProductCart
          key={product.id} 
-         product={product} 
-         addProductToCart={addProductToCart} />
+         product={product} />
       ))}
     </div>
   )

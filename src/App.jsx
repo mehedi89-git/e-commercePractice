@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { CartContext } from './contexts';
 
-import { LeftPanel } from './components/leftPanel/LeftPanel';
-import { RightPanel } from './components/RightPanel';
+import { LeftPanel, RightPanel } from './components';
+
 
 import './App.css';
+
 
 
 
@@ -40,11 +42,16 @@ function App() {
   };
 
   return (
+    <CartContext.Provider value={{
+      cart,
+      addProductToCart,
+      removeProductFromCart,
+    }}>
     <div className="App">
-      <LeftPanel addProductToCart={addProductToCart} /> 
-      <RightPanel cart={cart} 
-      removeProductFromCart={removeProductFromCart} />    
+      <LeftPanel /> 
+      <RightPanel />    
     </div>
+    </CartContext.Provider>
   );
 };
 

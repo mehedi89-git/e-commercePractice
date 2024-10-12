@@ -1,8 +1,8 @@
-import { ProductGrid } from "../product/ProductGrid";
+import { ProductGrid } from "../product";
 import { FilterSection } from "./FilterSection";
 import { Heading } from "./Heading";
 
-export function LeftPanel({ addProductToCart,  }) {
+export function LeftPanel() {
 
  
 
@@ -10,7 +10,7 @@ export function LeftPanel({ addProductToCart,  }) {
       <div>
           <Heading />
           <FilterSection />
-          <ProductGrid addProductToCart={addProductToCart} /> 
+          <ProductGrid /> 
       </div>
     );
   }

@@ -1,5 +1,14 @@
-   import "./ProductCart.css";
-   export const ProductCart = ({ product, addProductToCart }) => {
+import { useContext } from "react";
+
+import { CartContext } from "../../contexts";
+
+import "./ProductCart.css";
+
+
+
+   export const ProductCart = ({ product }) => {
+      const { addProductToCart } = useContext(CartContext)
+
       const handleAddProductToCart = () => {
         addProductToCart(product)
       }

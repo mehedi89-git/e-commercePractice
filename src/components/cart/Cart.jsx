@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
 import { CartItem } from './CartItem'
+
+import { CartContext } from '../../contexts'
 
 import './Cart.css'
 
 
-export const Cart = ({ cart, removeProductFromCart }) => {
+
+
+export const Cart = () => {
+  const { cart, removeProductFromCart } = useContext(CartContext)
+
   return (
         <ul>
             {cart.map((cartItem) => (
